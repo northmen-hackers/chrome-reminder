@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Health Reminder",
+    "description": "Reminds you of healthy habits",
+    "version": "0.0.1",
+    "icons": {
+        "128": "heart.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>"],
+            "js": ["src/Content/content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "src/Background/background.js"
+    },
+    "action": {
+        "default_popup": "src/Popup/popup.html"
+    },
+    "permissions": ["storage", "activeTab", "scripting", "tabs","notifications","alarms"]
+}
